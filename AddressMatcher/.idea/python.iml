@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 2.7.10 (/usr/local/Cellar/python/2.7.10/Frameworks/Python.framework/Versions/2.7/bin/python2.7)" />
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file:///production/python" />
     <output-test url="file:///test/python" />
@@ -9,5 +14,6 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 2.7.10 (/usr/local/Cellar/python/2.7.10/Frameworks/Python.framework/Versions/2.7/bin/python2.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Python 2.7.10 (/usr/local/Cellar/python/2.7.10/Frameworks/Python.framework/Versions/2.7/bin/python2.7) interpreter library" level="application" />
   </component>
 </module>

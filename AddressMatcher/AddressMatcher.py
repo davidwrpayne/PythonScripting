@@ -12,36 +12,34 @@ def main():
     file1 = sys.argv[4]
     file2 = sys.argv[5]
 
+
+    # convert columns to array indices
     f1ColumnTof2Column = map(methodcaller('rsplit','-'),f1ColumnTof2Column[1:len(f1ColumnTof2Column)-1].rsplit(','))
     columnPairs = []
+
     for i in f1ColumnTof2Column:
-        columnPairs.append( map(int,i))
-    print columnPairs
+        f = lambda x:x-1
+        columnPairs.append( map(f,map(int,i)) )
+    # print columnPairs
 
 
 
-    f1Rows = getRows(file1,file1RowStart)
-    print f1Rows
-    f2Rows = getRows(file2,file2RowStart)
-    print f2Rows
+    file1Rows = getRows(file1,file1RowStart)
+    # print f1Rows
+    file2Rows = getRows(file2,file2RowStart)
+    # print f2Rows
 
-    for r1 in f1Rows:
-        for r2 in f2Rows:
-
-            for pair in columnPairs:
-                print str(pair[0]) + " " + str(pair[1])
-                
-
-
-def readFile():
-    with open('/Users/david.payne/personal/python/test.csv', 'rb') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-        # addresses = ()
-        for row in spamreader:
-            print ', '.join(row)
-
-
-
+    row1 = 0
+    for file1Row in file1Rows:
+        row2 = 0
+        row1 += 1
+        for file2Row in file2Rows:
+            row2 += 1
+            for i,j in columnPairs:
+                if( file1Row[i] == file2Row[j]):
+                    print file1Row[i] + " : " + file2Row[j]
+                    print "match in \ncolumn:" + str(i + 1) + " in row: " + str(row1) + " from file1 \nto\ncolumn: " +str(j +1 ) + " in row: " + str(row2) + " from file2"
+                    print
 
 
 def getRows(fileName,rowStart):
@@ -59,8 +57,8 @@ def getRows(fileName,rowStart):
 
 
 
-def compareColumns(row1,row2,column1,column2):
-    if( row1.equ)
+# def compareColumns(row1,row2,column1,column2):
+#     if( row1.equ)
 
 
 
